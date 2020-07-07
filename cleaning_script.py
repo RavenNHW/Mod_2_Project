@@ -81,4 +81,5 @@ def return_clean_dataframe():
     duplicated_ids = df[df.id.duplicated()].id
     
     # Return df, duplicated_ids
-    return df, duplicated_ids
+    return df.to_pickle('./data/cleaned_df')
+return_clean_dataframe()
