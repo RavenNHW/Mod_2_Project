@@ -27,6 +27,14 @@ def return_clean_dataframe():
 
     # Impute sqft_basement from sqft_living - sqft_above
     df['sqft_basement'] = df.sqft_living - df.sqft_above
+    
+    # Adjusting an assumed typo of a house having 33 bedrooms
+    df.iat[15856, 3] = 3
+    
+    # Adjusting the 11 bedroom house's bedroom and bathroom counts after finding the correct values
+    # https://www.zillow.com/homedetails/5049-Delridge-Way-SW-Seattle-WA-98106/48755748_zpid/
+    df.iat[8748, 3] = 4
+    df.iat[8748, 4] = 1
 
     # Replace yr_renovated with yr_built where = either 0 or NaN
     df['yr_renovated'] = df['yr_renovated'].fillna(df['yr_built'])
