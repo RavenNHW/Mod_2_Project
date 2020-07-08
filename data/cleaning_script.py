@@ -43,7 +43,7 @@ def return_clean_dataframe():
     # Adjusting 18 entries that have a renovated year of 2015 to align with the year they were 
     # sold (2014), so that our Effective Age column will have no negative entries
     for i in df.loc[(df.yr_renovated > df.yr_sold)].yr_renovated.index:
-    df.iat[i, 15] = df.iat[i, 21]
+        df.iat[i, 15] = df.iat[i, 21]
 
     # Create Effective Age Column
     df['effective_age'] = df['yr_sold'] - df['yr_renovated']
@@ -94,5 +94,5 @@ def return_clean_dataframe():
     duplicated_ids = df[df.id.duplicated()].id
     
     # Return df, duplicated_ids
-    return df.to_pickle('./data/cleaned_df')
+    return df.to_pickle('./data/cleaned_df.pkl')
 return_clean_dataframe()
