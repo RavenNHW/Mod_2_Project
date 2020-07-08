@@ -27,10 +27,23 @@ def return_clean_dataframe():
 
     # Impute sqft_basement from sqft_living - sqft_above
     df['sqft_basement'] = df.sqft_living - df.sqft_above
+    
+    # Adjusting an assumed typo of a house having 33 bedrooms
+    df.iat[15856, 3] = 3
+    
+    # Adjusting the 11 bedroom house's bedroom and bathroom counts after finding the correct values
+    # https://www.zillow.com/homedetails/5049-Delridge-Way-SW-Seattle-WA-98106/48755748_zpid/
+    df.iat[8748, 3] = 4
+    df.iat[8748, 4] = 1
 
     # Replace yr_renovated with yr_built where = either 0 or NaN
     df['yr_renovated'] = df['yr_renovated'].fillna(df['yr_built'])
     df['yr_renovated'] = df['yr_renovated'].replace(0, df['yr_built'])
+    
+    # Adjusting 18 entries that have a renovated year of 2015 to align with the year they were 
+    # sold (2014), so that our Effective Age column will have no negative entries
+    for i in df.loc[(df.yr_renovated > df.yr_sold)].yr_renovated.index:
+    df.iat[i, 15] = df.iat[i, 21]
 
     # Create Effective Age Column
     df['effective_age'] = df['yr_sold'] - df['yr_renovated']
@@ -81,5 +94,5 @@ def return_clean_dataframe():
     duplicated_ids = df[df.id.duplicated()].id
     
     # Return df, duplicated_ids
-    return df.to_pickle('./data/cleaned_df.pkl')
+    return df.to_pickle('./data/cleaned_df')
 return_clean_dataframe()
