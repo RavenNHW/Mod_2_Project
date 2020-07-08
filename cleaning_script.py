@@ -39,6 +39,11 @@ def return_clean_dataframe():
     # Replace yr_renovated with yr_built where = either 0 or NaN
     df['yr_renovated'] = df['yr_renovated'].fillna(df['yr_built'])
     df['yr_renovated'] = df['yr_renovated'].replace(0, df['yr_built'])
+    
+    # Adjusting 18 entries that have a renovated year of 2015 to align with the year they were 
+    # sold (2014), so that our Effective Age column will have no negative entries
+    for i in df.loc[(df.yr_renovated > df.yr_sold)].yr_renovated.index:
+    df.iat[i, 15] = df.iat[i, 21]
 
     # Create Effective Age Column
     df['effective_age'] = df['yr_sold'] - df['yr_renovated']
