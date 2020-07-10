@@ -87,7 +87,8 @@ We analyzed a dataset of 21,597 houses, each containing the following *relevant*
 - Our information on proximity to water was limited, as only 0.68% of our original dataset were listed as being a "waterfront" location. Everything else was either "not a waterfront" location, or had a missing value.
 
 
-### Future Research
+### Future Improvements
+- Build a UI where one can input a house's square footage, latitude, and longitude, and receive a range of suggested sale prices.
 - Find a more appropriate polynomial model, as our model did not perform as well on higher sales prices.
 - Utilize a more advanced geostatistical technique, such as 'kriging' that could better define local neighborhoods and their differences, better than our six "geographical points of interest."
 - With more years of data, try to explore any spatiotemporal effects that may be present within a longer range of dates.
