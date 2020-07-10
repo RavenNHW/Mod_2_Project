@@ -95,10 +95,35 @@ We analyzed a dataset of 21,597 houses, each containing the following *relevant*
 
 
 ### Reproducing Our Data
-Download the [Original King County House Dataset] from our repo, and run the code found in our [Cleaning Script] to produce a copy of our final dataset. This can also be accomplished at the start of our [Technical Notebook].
+Download the [Original King County House Dataset] from our repo, and run the code found in our [Cleaning Script] to produce a copy of our final dataset. This can also be accomplished at the start of our [Executive Notebook].
 
 ### Repo Navigation
+```
+├── Images
+│   ├── .DS_Store
+│   ├── KC_zipcodes.gif
+│   ├── for_sale.png
+│   ├── geo_poi.png
+│   ├── houses_by_price.png
+│   ├── lat_long_clusters.png
+│   ├── price_by_geo_pois.png
+│   ├── space_needle_db_r2.png
+│   ├── sqft_r2.png
+│   └── train_test_residuals.png
+│
+├── data
+│   ├── cleaned_df.pkl
+│   ├── cleaning_script.py
+│   ├── column_names.md
+│   └── kc_house_data.csv
+│
+├── Executive Notebook.ipynb
+│
+├── README.md
+│
+└── presentation.pdf
 
+```
 
 ### Sources of Images Used in Presentation
 - Slide 1: https://webassets.inman.com/wp-content/uploads/2018/01/shutterstock_752498263.jpg
@@ -120,9 +145,7 @@ Download the [Original King County House Dataset] from our repo, and run the cod
    [our cleaned data]: <https://github.com/RavenNHW/Mod_2_Project/blob/master/data/cleaned_df.pkl>
    [cleaning script]: <https://github.com/RavenNHW/Mod_2_Project/blob/master/data/cleaning_script.py>
    [original king county house dataset]: <https://github.com/RavenNHW/Mod_2_Project/blob/master/data/kc_house_data.csv>
-      
-
-   [technical notebook]: <>
+   [executive notebook]: <https://github.com/RavenNHW/Mod_2_Project/blob/master/Executive%20Notebook.ipynb>
 
 
 
