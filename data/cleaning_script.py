@@ -50,6 +50,9 @@ def return_clean_dataframe():
 
     # Create Log-Scaled Price Column
     df['log_price'] = np.log(df.price)
+    
+    # Chose to cut houses greater than 8,000 sq feet, as we felt those weren't representative of our target audience.
+    df = df[df.sqft_living < 8000]
 
     # Create a function for computing (as the crow flies) Distance between
     # Space needle and given lat/long
