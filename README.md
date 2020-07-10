@@ -3,7 +3,7 @@
 ##### Contributors:
 ##### - Jake Miller Brooks, brooksjacobm@gmail.com
 ##### - Nick Pardue, nickpardue@gmail.com
-##### Raven Welch, RavenNHWelch@gmail.com
+##### - Raven Welch, RavenNHWelch@gmail.com
 
 ### [Our Presentation]
 
